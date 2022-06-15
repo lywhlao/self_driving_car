@@ -63,4 +63,5 @@ if __name__ == '__main__':
     model = load_model('model.h5')
     app = socketio.Middleware(sio, app)
     ### LISTEN TO PORT 4567
+
     eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
