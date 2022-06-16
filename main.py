@@ -44,12 +44,21 @@ def telemetry(sid, data):
 @sio.event
 def connect(sid, environ):
     print('connect ', sid)
-    sendControl(0, 1)
+    sendControl(0, 0)
+
+# @sio.on('connect')
+# def connect(sid, environ):
+#     print('Connected')
+#     sendControl(0, 1)
+
+# @sio.on('*')
+# def catch_all(event, data):
+#     print('Connecte1111d')
 
 @sio.on('connect')
 def connect(sid, environ):
     print('Connected')
-    sendControl(0, 1)
+    sendControl(0, 0)
 
 
 def sendControl(steering, throttle):
